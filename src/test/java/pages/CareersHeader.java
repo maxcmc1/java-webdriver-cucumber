@@ -4,6 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.Map;
+
+import static support.TestContext.getDataUniversal;
 import static support.TestContext.getWait;
 
 public class CareersHeader extends Page{
@@ -36,6 +39,18 @@ public class CareersHeader extends Page{
 
     @FindBy(xpath = "//span[text()='Careers']")
     private WebElement careersHeader;
+
+
+
+    public String getName(String userRole) {
+        Map<String, Map<String, String>> data = getDataUniversal("dataCareers");
+        Map<String, String> userData = data.get(userRole);
+        if (userData.get("name") != null) {
+            return userData.get("name");
+        } else {
+            return  userData.get("firstName") + " " + userData.get("lastName");
+        }
+    }
 
 
     public MyJobsCareersPage clickMyJobsButton(){

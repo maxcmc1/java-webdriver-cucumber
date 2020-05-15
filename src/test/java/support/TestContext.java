@@ -86,6 +86,18 @@ public class TestContext {
 
     }
 
+    public static <T extends Object> Map<String, T> getDataUniversal(String fileName) {
+        String path = System.getProperty("user.dir") + "/src/test/resources/data/" + fileName + ".yml";
+        File file = new File(path);
+        FileInputStream stream = null;
+        try {
+            stream = new FileInputStream(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return new Yaml().load(stream);
+    }
+
     public static ConfigMapper getConfig(){
         try {
             String configPath = System.getProperty("user.dir") + "/src/test/resources/data/config.yml";
@@ -135,7 +147,7 @@ public class TestContext {
 
     public static void initialize() {
         setTimestamp();
-        initialize(getConfig().browser, getConfig().testEnv, getConfig().isHeadless);
+         initialize(getConfig().browser, getConfig().testEnv, getConfig().isHeadless);
     }
 
     public static void teardown() {
@@ -144,8 +156,6 @@ public class TestContext {
 
     public static void initialize(String browser, String testEnv, boolean isHeadless) {
         String osName = System.getProperty("os.name");
-//        Dimension size = new Dimension(1920, 1080);
-//        Point position = new Point(0, 0);
         if(testEnv.equals("local")) {
             switch (browser) {
                 case "chrome":

@@ -24,15 +24,15 @@ public class Hooks {
     @Before(value = "@create_position")
     public void createPosition(){
         new RestWrapper()
-                .login(getData("recruiter"))
+                .login(getData("dataCareers"))
                 .createPosition(getPosition("automation"));
     }
 
     @Before(value = "@create_candidate_and_position")
     public void createCandidate(){
         new RestWrapper()
-                .login(getData("recruiter"))
-                .createCandidate(getData("candidate"));
+                .login(getData("dataCareers"))
+                .createCandidate(getData("dataCareers"));
         new RestWrapper()
                 .createPosition(getPosition("automation"));
     }
@@ -41,7 +41,7 @@ public class Hooks {
     @After(value = "@delete_position")
     public void deletePosition(){
         new RestWrapper()
-                .login(getData("recruiter"))
+                .login(getData("dataCareers"))
                 .deletePositionById(getTestDataMap("newPosition").get("id"));
     }
 
@@ -56,7 +56,7 @@ public class Hooks {
     @After(value = "@delete_candidate")
     public void deleteCandidate(){
         new RestWrapper()
-                .login(getData("recruiter"))
+                .login(getData("dataCareers"))
                 .deleteCandidateById(getTestDataMap("newCandidate").get("id"));
     }
 

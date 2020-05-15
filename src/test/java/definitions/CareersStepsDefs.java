@@ -43,24 +43,25 @@ public class CareersStepsDefs {
     @Then("I verify {string} login")
     public void iVerifyLogin(String userRole) {
 
-        Map<String, String> userFromFile = getData(userRole);
+//        Map<String, String> userFromFile = getData(userRole);
+//
+//        String actualName = new LandingCareersPage().getloggedUserName();
+//        String expectedNameRecruiter = userFromFile.get("name");
+//        String expectedNameCandidate = userFromFile.get("lastName");
+//
+//        switch (userRole){
+//            case "recruiter":
+//                assertThat(actualName).isEqualTo(expectedNameRecruiter);
+//                break;
+//            case "candidate":
+//                assertThat(actualName).contains(expectedNameCandidate);
+//                break;
+//            default:
+//                throw new RuntimeException("No user exists: " + userRole);
+//        }
 
         String actualName = new LandingCareersPage().getloggedUserName();
-        String expectedNameRecruiter = userFromFile.get("name");
-        String expectedNameCandidate = userFromFile.get("lastName");
-
-        switch (userRole){
-            case "recruiter":
-                assertThat(actualName).isEqualTo(expectedNameRecruiter);
-                break;
-            case "candidate":
-                assertThat(actualName).contains(expectedNameCandidate);
-                break;
-            default:
-                throw new RuntimeException("No user exists: " + userRole);
-        }
-
-
+        assertThat(actualName).isEqualTo(new CareersHeader().getName(userRole));
 
     }
 

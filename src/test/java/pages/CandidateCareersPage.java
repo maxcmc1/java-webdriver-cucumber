@@ -41,14 +41,4 @@ public class CandidateCareersPage extends CareersHeader{
         }
     }
 
-    public boolean isCandidatesPositionCards(String title){
-        try {
-            waitingToBeVisible(candidatesPositionCards(title));
-            return candidatesPositionCards(title).isDisplayed();
-        } catch (NoSuchElementException e){
-            return false;
-        }
-    }
-
-
 }
