@@ -4,21 +4,11 @@ Feature: Marketing app test suite
 
   @market1
   Scenario: Market basic test
-#    Given I go to "google" page
-#    And I print page details in console
     And I go to "quote" page
-#    And I print page details in console
-#    And I go back and forward, then refresh the page
-#    And I change resolution to "phone"
-#    Then I will wait for 1 sec
-#    And I change resolution to "desktop"
     When I fill out required fields
-#    And I fill out optional fields
     And I verify email field behavior
-#    Then I will wait for 5 sec
     And I submit the form
-    Then I verify that fields values recorded correctly
-#    Then I verify that form is submitted
+#    Then I verify that fields values recorded correctly
 
   @market2
   Scenario: Market optional fields

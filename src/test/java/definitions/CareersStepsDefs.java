@@ -60,8 +60,13 @@ public class CareersStepsDefs {
 //                throw new RuntimeException("No user exists: " + userRole);
 //        }
 
-        String actualName = new LandingCareersPage().getloggedUserName();
-        assertThat(actualName).isEqualTo(new CareersHeader().getName(userRole));
+//        String actualName = new LandingCareersPage().getloggedUserName();
+//        assertThat(actualName).isEqualTo(new CareersHeader().getName(userRole));
+
+            String actualName = new LandingCareersPage().getloggedUserName();
+            String expectedName = new CareersHeader().getName(userRole);
+            assertThat(actualName).isEqualTo(expectedName);
+
 
     }
 

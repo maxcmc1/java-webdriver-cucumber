@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.Map;
 
-import static support.TestContext.getDataUniversal;
+import static support.TestContext.getData;
 import static support.TestContext.getWait;
 
 public class CareersHeader extends Page{
@@ -42,14 +42,19 @@ public class CareersHeader extends Page{
 
 
 
+//    public String getName(String userRole) {
+//        Map<String, Map<String, String>> data = getDataUniversal("dataCareers");
+//        Map<String, String> userData = data.get(userRole);
+//        if (userData.get("name") != null) {
+//            return userData.get("name");
+//        } else {
+//            return  userData.get("firstName") + " " + userData.get("lastName");
+//        }
+//    }
+
     public String getName(String userRole) {
-        Map<String, Map<String, String>> data = getDataUniversal("dataCareers");
-        Map<String, String> userData = data.get(userRole);
-        if (userData.get("name") != null) {
-            return userData.get("name");
-        } else {
-            return  userData.get("firstName") + " " + userData.get("lastName");
-        }
+        Map<String, String> userData = getData(userRole);
+        return userData.get("name") != null ? userData.get("name") : userData.get("firstName") + " " + userData.get("lastName");
     }
 
 

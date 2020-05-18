@@ -86,17 +86,17 @@ public class TestContext {
 
     }
 
-    public static <T extends Object> Map<String, T> getDataUniversal(String fileName) {
-        String path = System.getProperty("user.dir") + "/src/test/resources/data/" + fileName + ".yml";
-        File file = new File(path);
-        FileInputStream stream = null;
-        try {
-            stream = new FileInputStream(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        return new Yaml().load(stream);
-    }
+//    public static <T extends Object> Map<String, T> getDataUniversal(String fileName) {
+//        String path = System.getProperty("user.dir") + "/src/test/resources/data/" + fileName + ".yml";
+//        File file = new File(path);
+//        FileInputStream stream = null;
+//        try {
+//            stream = new FileInputStream(file);
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//        return new Yaml().load(stream);
+//    }
 
     public static ConfigMapper getConfig(){
         try {
