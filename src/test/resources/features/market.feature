@@ -8,7 +8,7 @@ Feature: Marketing app test suite
     When I fill out required fields
     And I verify email field behavior
     And I submit the form
-#    Then I verify that fields values recorded correctly
+    Then I verify that fields values recorded correctly
 
   @market2
   Scenario: Market optional fields

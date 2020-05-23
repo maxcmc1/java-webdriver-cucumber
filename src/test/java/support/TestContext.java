@@ -1,6 +1,7 @@
 // Created by Viacheslav (Slava) Skryabin 04/01/2018
 package support;
 
+import cucumber.api.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Platform;
@@ -38,6 +39,12 @@ public class TestContext {
 
     private static String timestamp;
 
+    private static Scenario scenario;
+
+
+    public static void setScenario(Scenario newScenario){
+        scenario = newScenario;
+    }
 
     public static void setTestData(String key, Object value){
         testData.put(key, value);
@@ -72,8 +79,7 @@ public class TestContext {
     public static Actions getActions() { //static is going to make 'getActions' method used without creating new instance of Actions
         return new Actions(driver);
     }
-
-    public static WebDriverWait getWait(){
+     public static WebDriverWait getWait(){
         return getWait(getConfig().explicitTimeout);
     }
 
@@ -221,7 +227,13 @@ public class TestContext {
                 DesiredCapabilities capabilities = new DesiredCapabilities();
                 capabilities.setBrowserName(browser);
                 capabilities.setPlatform(Platform.ANY);
-//                URL hubUrl = null;
+                capabilities.setCapability("sessionTimeout", "10m");
+                capabilities.setCapability("enableVNC", true);
+                capabilities.setCapability("enableVideo", true);
+                capabilities.setCapability("enableLog", true);
+                String scenarioName = scenario.getSourceTagNames() + " " + scenario.getName();
+                capabilities.setCapability("name", scenarioName);
+                capabilities.setCapability("videoName", scenarioName + " " + timestamp + ".mp4");
                 try {
                     URL hubUrl = new URL("http://localhost:4444/wd/hub");
                     driver = new RemoteWebDriver(hubUrl, capabilities);

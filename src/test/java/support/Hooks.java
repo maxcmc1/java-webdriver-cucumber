@@ -13,8 +13,9 @@ import static support.TestContext.*;
 public class Hooks {
 
     @Before(order = 0)
-    public void scenarioStart() {
+    public void scenarioStart(Scenario scenario) {
         TestContext.setTimestamp();
+        TestContext.setScenario(scenario);
         TestContext.initialize();
         getDriver().manage().deleteAllCookies();
         getDriver().manage().timeouts().implicitlyWait(getConfig().implicitTimeout, TimeUnit.SECONDS);
