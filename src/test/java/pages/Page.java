@@ -35,8 +35,23 @@ public abstract class Page implements Loggable {
         getWait().until(ExpectedConditions.elementToBeClickable(element));
     }
 
+
     public void waitingToBeVisible(WebElement element){
-        getWait().until(ExpectedConditions.visibilityOf(element));
+        getWait(10).until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public void waitingToBeInVisible(WebElement element){
+        getWait(10).until(ExpectedConditions.invisibilityOf(element));
+    }
+
+    public void waitingUsingLambda(WebElement element){
+        getWait().until(driver -> !element.getText().isEmpty());
+
+    }
+
+
+    public void mouseOver(WebElement element){
+        getActions().moveToElement(element).perform();
     }
 
     public void click(WebElement element){
@@ -74,10 +89,11 @@ public abstract class Page implements Loggable {
         getDriver().navigate().refresh();
     }
 
+
 }
 
 // Encapsulation - is when we hide the fields and then we use them through 'micro methods'
 // Enharitance - is when we allows get us all the benefits from parent class (extending from it)
-// Obstructions - allows us to set up some template for generic page and spread across multiple sub classes
+// Abstructions - allows us to set up some template for generic page and spread across multiple sub classes
 // Overloading (static polymorphysm) - it's when we defining the same method but they have different amount of arguments, data types of those arguments
 

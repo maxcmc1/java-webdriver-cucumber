@@ -18,37 +18,34 @@ import static support.TestContext.getDriver;
 public class MarketStepDefs {
 
 
-    @Given("I go to {string} page")
-    public void iGoToPage(String page) {
-
-        switch (page) {
-            case"ups":
-                getDriver().get("https://www.ups.com/us/en/global.page");
-                break;
-            case"calculator":
-                getDriver().get("https://www.calculator.net/");
-                break;
-            case"converter":
-                getDriver().get("https://www.unitconverters.net/");
-                break;
-            case "usps":
-                getDriver().get("https://www.usps.com/");
-                break;
-            case "quote":
-                getDriver().get("https://skryabin.com/market/quote.html");
-                break;
-            case "google":
-                getDriver().get("https://www.google.com/");
-                break;
-            case "yahoo":
-                getDriver().get("https://www.yahoo.com/");
-                break;
-            default:
-                throw new RuntimeException("Not recognized page " + page);
-        }
-
-
-    }
+//    @Given("I go to {string} page")
+//    public void iGoToPage(String page) {
+//
+//        switch (page) {
+//            case"ups":
+//                getDriver().get("https://www.ups.com/us/en/global.page");
+//                break;
+//            case"calculator":
+//                getDriver().get("https://www.calculator.net/");
+//                break;
+//            case"converter":
+//                getDriver().get("https://www.unitconverters.net/");
+//                break;
+//            case "quote":
+//                getDriver().get("https://skryabin.com/market/quote.html");
+//                break;
+//            case "google":
+//                getDriver().get("https://www.google.com/");
+//                break;
+//            case "yahoo":
+//                getDriver().get("https://www.yahoo.com/");
+//                break;
+//            default:
+//                throw new RuntimeException("Not recognized page " + page);
+//        }
+//
+//
+//    }
 
     @And("I print page details in console")
     public void iPrintPageDetailsInConsole() {

@@ -13,20 +13,31 @@ Feature: USPS test suite
       | 111 McInnis Pkwy       | San Rafael    | CA    | 94903 |
       | 1600 Amphitheatre Pkwy | Mountain View | CA    | 94043 |
 
+
   @usps1.2
-  Scenario: Validate ZIP code for Portnov Computer School using mouseover
+  Scenario Outline: Validate ZIP code for Portnov Computer School using mouseover
     Given I go to "usps" page
     When I go to Lookup ZIP page by address by mouseover
-    And I fill out "4970 El Camino Real" street, "Los Altos" city, "CA" state
-    Then I validate "94022" zip code exists in the result
+    And I fill out "<street>" street, "<city>" city, "<state>" state
+    Then I validate "<zip>" zip code exists in the result
+    Examples:
+      | street                 | city          | state | zip   |
+      | 4970 El Camino Real    | Los Altos     | CA    | 94022 |
+      | 111 McInnis Pkwy       | San Rafael    | CA    | 94903 |
+      | 1600 Amphitheatre Pkwy | Mountain View | CA    | 94043 |
 
 
   @usps3
-  Scenario: Verify that zip code is not just in result area, but each sub-result row element has the correct zip code for Portnov Computer School
+  Scenario Outline: Verify that zip code is not just in result area, but each sub-result row element has the correct zip code for Portnov Computer School
     Given I go to "usps" page
     When I go to Lookup ZIP page by address
-    And I fill out "4970 El Camino Real" street, "Los Altos" city, "CA" state
-    Then I validate "94022" zip code exists in each sub-result
+    And I fill out "<street>" street, "<city>" city, "<state>" state
+    Then I validate "<zip>" zip code exists in each sub-result
+    Examples:
+      | street                 | city          | state | zip   |
+      | 4970 El Camino Real    | Los Altos     | CA    | 94022 |
+      | 111 McInnis Pkwy       | San Rafael    | CA    | 94903 |
+      | 1600 Amphitheatre Pkwy | Mountain View | CA    | 94043 |
 
   @usps4
   Scenario: Calculate price
@@ -46,30 +57,43 @@ Feature: USPS test suite
 
 
   @usps5
-  Scenario: Phone number of the nearest Accountable Mail Pickup Service Post Office for Portnov Computer School
+  Scenario Outline: Phone number of the nearest Accountable Mail Pickup Service Post Office for Portnov Computer School
     Given I go to "usps" page
     When I go to Find a Location Page
     And I filter by "Post Offices™" Location Types, "Pickup Services" Services, "Accountable Mail" Available Services
     And I fill in "4970 El Camino Real 110" street, "Los Altos" city, "CA" state
-    Then I print the phone number and validate it is "800-275-8777"
+    Then I print the phone number and validate it is "<phone>"
+    Examples:
+      | phone        |
+      | 800-275-8777 |
+
+
 
   @usps6
-  Scenario: Quadcopters delivery
+  Scenario Outline: Quadcopters delivery
     Given I go to "usps" page
     When I go to "Help" tab
-    And I perform "Quadcopters delivery" help search
-    Then I verify that no results of "Quadcopters delivery" available in help search
+    And I perform "<text>" help search
+    Then I verify that no results of "<text>" available in help search
+    Examples:
+      | text                 |
+      | Quadcopters delivery |
 
 
   @usps7
-  Scenario: Every door direct mail
+  Scenario Outline: Every door direct mail
     Given I go to "usps" page
     When I go to "Every Door Direct Mail" under "Business"
-    And I search for "4970 El Camino Real, Los Altos, CA 94022"
+    And I search for "<address>"
     And I click "Show Table" on the map
     When I click "Select All" on the table
     And I close modal window
     Then I verify that summary of all rows of Cost column is equal Approximate Cost in Order Summary
+    Examples:
+      | address                                  |
+      | 4970 El Camino Real, Los Altos, CA 94022 |
+
+
 
   @usps8
   Scenario: Verify location

@@ -235,7 +235,7 @@ public class JavaStepsDefs {
         Map<String, String> user = Map.of(
                 "username", "jdoe",
                 "password", "welcome",
-                "email", "john@doe.com"
+                "email", "definitions.hello.john@doe.com"
         );
 
         Map<String, String> admin = Map.of(
@@ -432,7 +432,7 @@ public class JavaStepsDefs {
     @Given("Coding tasks Day eleven")
     public void codingTasksDayEleven() {
 
-//        // Write a function that prints all numbers from 0 up to n
+        // Write a function that prints all numbers from 0 up to n
 //        printNum(7);
 //
 //        System.out.println();
@@ -442,19 +442,22 @@ public class JavaStepsDefs {
 //
 //        System.out.println();
 //
-//        //Write a function that prints all integer array
-//        Integer [] arr = {19, 2, 8, -122, 9};
+////        Write a function that prints all integer array
+//        int[] arr = {2, 4, 98, -87};
 //        printArr(arr);
+
 //
 //        System.out.println();
 //
-//        // Write a function that prints all even numbers from integer array
+        // Write a function that prints all even numbers from integer array
+//        int[] arr = {2, 4, 98, -87};
 //        printArrEven(arr);
 //
 //        System.out.println();
 //
-//        // Write a function that checks if array is empty
-//        Integer[] newArr = {};
+        // Write a function that checks if array is empty
+//        int[] newArr = {};
+//        int[] arr = {2, 4, 98, -87};
 //        System.out.println("array is empty = " + isArrEmpty(newArr));
 //        System.out.println("array is empty = " + isArrEmpty(arr));
 //
@@ -467,15 +470,16 @@ public class JavaStepsDefs {
 //        System.out.println();
 //
 //        // Write a function that checks if array contains another element
-//        String[] strArr = {"apple", "orange", "pumpkin"};
-//        System.out.println("apple = " + isContaining(strArr, "apple"));
-//        System.out.println("6 = " + isContaining(arr, 6));
+//        String[] strArr = {"apple", "orange", "carrot"};
+//        Integer[] intArr = {5, 6, 9, 34};
+//        System.out.println(isContaining(strArr, "apple"));
+//        System.out.println(isContaining(intArr, 14));
 //
 //        System.out.println();
 //
         // Function that reverse characters in words
 //        String str = "Web Driver";
-//        reverseWords(str);
+//        printReversed(str);
 
 
         // function, accepts integer argument. It should print all the numbers up to the argument
@@ -483,18 +487,18 @@ public class JavaStepsDefs {
 
         // Function that finds max number in an array
 //        int [] arr = {9, 2, 8, -122, 19};
-//        System.out.println(maxValueArr(arr));
+//        maxValueArr(arr);
 
 
         // Function reverse words in string
-//        System.out.println(reverseWords("Hello World!"));
+//        System.out.println(reverseWords("Hello World Morning evening"));
 
         // String is palindrome
-//        System.out.println(isPalindrome("madam"));
+        System.out.println(isPalindrome("madam"));
 
 
-        // functions finds tow max numbers
-//        int [] arr = {7, 12, 11};
+        // functions finds tow max numbers in an array
+//        int [] arr = {7, 12, 11, 14};
 //        twoMaxNumbers(arr);
 
 
@@ -502,233 +506,240 @@ public class JavaStepsDefs {
 //        System.out.println(isPrime(7));
 
 //
-//        // Function to print every third character in string
-//        System.out.println(printReversed("WebDriverA"));
+////        // Function to print every third character in reversed string
+//        System.out.println(printEveryThirdCharOfReversedStr("WebDriverA"));
 //
 //
 //        // function that sorts an array
 //        int[] myArray = {90, 8, 55, 1};
 //        System.out.println(Arrays.toString(sort(myArray)));
 //
-//
-//        // function that find factorial of a number
+        // function that find factorial of a number
 //        System.out.println(factorial(5));
 
 
         // function that finds if sum of any of 2 elements in an array result in number
-//        int[] arr2 = {4, 8, 4, 1, 11};
-//        int sum = 16;
-//        System.out.println(isResultSum(arr2, sum));
+//        int[] arr2 = {4, 6, 7, 9, 3};
+//        int sum2 = 50;
+//        System.out.println(isResultSum(arr2, sum2));
 
 
-        // function that finds Fibonacci number sequence
-        System.out.println(fib(1));
-        System.out.println(fib(5));
-        System.out.println(fib(10));
+//         function that finds Fibonacci number sequence
+//        System.out.println(fibOf(4));
+//        System.out.println(fibOf(5));
+//        System.out.println(fibOf(10));
 
     }
 
     // function that finds Fibonacci number sequence in recursive call
-    long fib(int num){
-        if (num == 0 || num == 1){
-            return num;
-        }
-        return fib(num - 1) + fib(num - 2);
-    }
+//    long fibOf(long sec){
+//        if((sec == 0) || (sec == 1)){
+//            return sec;
+//        }
+//        return fibOf(sec - 1) + fibOf(sec - 2);
+//    }
 
-    // function that finds Fibonacci number sequence
+
+    // function that finds Fibonacci number sequence. Fibonacci is when next number is equaled to the sum of previous two numbers
     // 1 1 2 3 5 8 13 21 34 55 89 144
-    // perFib = 0
-    // nextFib = 1
-    long fibFor(int seq){
-        long prevFib = 0;
-        long nextFib = 1;
+//     perFib = 0
+//     nextFib = 1
+//    long fibOf(int sec){
+//        long preFib = 0;
+//        long nexFib = 1;
+//        for(int i = 1; i < sec; i++){
+//            long temp = nexFib;
+//            nexFib = preFib + nexFib;
+//            preFib = temp;
+//        }
+//        return nexFib;
+//    }
 
-        for (int i = 1; i < seq; i++){
-            long temp = nextFib;
-            nextFib = prevFib + nextFib;
-            prevFib = temp;
-        }
-        return nextFib;
-    }
+
+
 
 
     // function that finds if sum of any of 2 elements in an array result in number
-    boolean isResultSum(int[] arr, int sum){
-        for(int i = 0; i < arr.length - 1; i++){
-            for(int j = i + 1; j < arr.length; j++){
-                if(arr[i] + arr[j] == sum){
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
+//    boolean isResultSum(int[] arr, int sum){
+//        for(int i = 0; i < arr.length - 1; i++){
+//            for(int j = i + 1; j < arr.length; j++){
+//                if(arr[i] + arr[j] == sum){
+//                    return true;
+//                }
+//            }
+//        }
+//        return false;
+//    }
 
 
 
     // function that find factorial of a number
-    long factorial(long num){
-        if(num == 0) {
-            return 1;
-        }
-        return num * factorial(num - 1);
-    }
+//    long factorial(long num){
+//        if(num == 0){
+//            return 1;
+//        }
+//        return num * factorial(num - 1);
+//    }
+
+
 
     // O(n^2)
     // function that sorts an array
-    int[] sort(int[] arr){
-        for (int i = 0; i < arr.length - 1; i++){
-            for (int j = i + 1; j < arr.length; j++){
-                if(arr[i] > arr[j]){
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
-                }
-            }
-        }
-        return arr;
-    }
-
-
-    // Function to print every third character in string
-    String printReversed (String str){
-        String reversed = "";
-        int j = 1;
-        for(int i = str.length() - 1; i >= 0; i--){
-            if(j % 3 == 0) {
-                reversed += str.charAt(i);
-            }
-            System.out.println(j);
-            j++;
-        }
-        return reversed;
-    }
+//    int[] sort(int[] arr){
+//        for(int i = 0; i < arr.length - 1; i++){
+//            for(int j = i + 1; j < arr.length; j++){
+//                if(arr[i] > arr[j]){
+//                    int temp = arr[i];
+//                    arr[i] = arr[j];
+//                    arr[j] = temp;
+//                }
+//            }
+//        }
+//        return arr;
+//    }
 
 
     // Function that verifies if number is prime
-    boolean isPrime(int num){
-        if(num < 2){
-            return false;
-        }
-        for(int i = 2; i < num; i++){
-            if(num % i == 0){
-                return false;
-            }
-        }
-        return true;
-    }
+//    boolean isPrime(int num){
+//        if(num < 2){
+//            return false;
+//        }
+//        for(int i = 2; i < num; i++){
+//            if(num % i == 0){
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+
 
     // O(n)
-    // functions finds tow max numbers
-    void twoMaxNumbers(int[] maxNums){
-        int maxOne = Integer.MIN_VALUE;
-        int maxTwo = Integer.MIN_VALUE;
-        for(int i = 0; i < maxNums.length; i++){
-            if(maxOne < maxNums[i]){
-                maxTwo = maxOne;
-                maxOne = maxNums[i];
-            } else if(maxTwo < maxNums[i]){
-                maxTwo = maxNums[i];
-            }
-        }
-        System.out.println(maxOne + " & " + maxTwo);
-    }
+    // functions finds two max numbers
+//    void twoMaxNumbers(int[] num){
+//        int maxOne = Integer.MIN_VALUE;
+//        int maxTwo = Integer.MIN_VALUE;
+//        for(int i = 0; i < num.length; i++) {
+//            if (maxOne < num[i]) {
+//                maxTwo = maxOne;
+//                maxOne = num[i];
+//            } else if(maxTwo < num[i]){
+//                maxTwo = num[i];
+//            }
+//        }
+//        System.out.println(maxOne + " & " + maxTwo);
+//    }
+
+
+    // Function to print every third character in reversed string
+//    String printEveryThirdCharOfReversedStr(String str){
+//        String reversed = "";
+//        int j = 1;
+//        for(int i = str.length() - 1; i >= 0; i--){
+//            if(j % 3 == 0){
+//                reversed += str.charAt(i);
+//            }
+//            j++;
+//        }
+//        return reversed;
+//    }
 
 
     // String is palindrome
-    boolean isPalindrome(String word){
-        String reverse = "";
-        for (int i = word.length() - 1; i >= 0; i--){
-            reverse += word.charAt(i);
+    boolean isPalindrome(String str){
+        String reversed = "";
+        for(int i = str.length() - 1; i >= 0; i--){
+            reversed += str.charAt(i);
         }
-        return word.equalsIgnoreCase(reverse);
+        return str.equalsIgnoreCase(reversed);
     }
 
 
-
-      // O(n)
+    // O(n)
     // Function reverse words in string
-//  String reverseWords(String phrase){
-//        String[] phraseArr = phrase.split(" "); // 'split' function is to split phrase by whatever is provided as 'Regex' inside of double quotes
-//        String reversePhrase = "";
-//
-//        for (int i = phraseArr.length - 1; i >=0; i--){
-//            reversePhrase += " " + phraseArr[i];
+//    String reverseWords(String phrase){
+//        String[] arrPhrase = phrase.split(" ");
+//        String reversedPhrase = " ";
+//        for(int i = arrPhrase.length - 1; i >= 0; i--){
+//            reversedPhrase += " " + arrPhrase[i];
 //        }
-//        return reversePhrase;
-//  }
+//        return reversedPhrase;
+//    }
 
 
-
-            // O(n)
-        // Function that finds max number in an array
-//    int maxValueArr(int[] numbers){
+    // O(n)
+    // Function that finds max number in an array
+//    void maxValueArr(int[] numbers){
 //        int maxValue = numbers[0];
-//        for (int i = 1; i < numbers.length; i++){
+//        for(int i = 1; i < numbers.length; i++){
 //            if(maxValue < numbers[i]){
 //                maxValue = numbers[i];
 //            }
 //        }
-//        return maxValue;
+//        System.out.println(maxValue);
 //    }
 
-            // O(n)
-//         Function, accepts integer argument. It should print all the numbers up to the argument
-    void fizzBuzz(int maxNumber) {
-        for (int i = 1; i <= maxNumber; i++) {
-            if (((i % 5) == 0) && ((i % 3) == 0)) {
-                System.out.println("FizzBuzz");
-            } else if ((i % 3) == 0) {
-                System.out.println("Fizz");
-            } else if ((i % 5) == 0) {
-                System.out.println("Buzz");
-            } else {
-                System.out.println(i);
-            }
-        }
-    }
 
-         // O(n)
-        // Function that reverse characters in words
-//    void printReversed (String str){
-//        for(int i = str.length() - 1; i >= 0; i--){
-//            System.out.print(str.charAt(i));
+    // O(n)
+//         Function, accepts integer argument. It should print all the numbers up to the argument
+//    void fizzBuzz(int maxNumber){
+//        for(int i = 1; i <= maxNumber; i++){
+//            if((i % 5 == 0) && (i % 3 == 0)){
+//                System.out.println("FizzBuzz");
+//            }else if(i % 3 == 0){
+//                System.out.println("Fizz");
+//            }else if(i % 5 == 0){
+//                System.out.println("Buzz");
+//            }else {
+//                System.out.println(i);
+//            }
 //        }
 //    }
+
+
+
+
+    // O(n)
+    // Function that reverse characters in words
+//    void printReversed(String str){
+//        for(int i = str.length() - 1; i >= 0; i--){
+//            System.out.println(str.charAt(i));
+//        }
+//    }
+
 
     // element search binary (assuming array sorted)
     // [4, 6, 9, 11, 234, 535, 580]
     //  0  1  2   3   4    5    6
     // O(log n)
-    boolean binarySearch(int[] arr, int num){
-        int low = 0; // 0
-        int high = arr.length - 1; // 6
-        while (low <= high){
-            int mid = (low + high) / 2;
-            if(arr[mid] == num){
-                return true;
-            } else if(arr[mid] < num){
-                low = mid + 1;
-            } else {
-                high = mid - 1;
-            }
-        }
-        return false;
-    }
+//    boolean binarySearch(int[] arr, int num){
+//        int low = 0; // 0
+//        int high = arr.length - 1; // 6
+//        while (low <= high){
+//            int mid = (low + high) / 2;
+//            if(arr[mid] == num){
+//                return true;
+//            } else if(arr[mid] < num){
+//                low = mid + 1;
+//            } else {
+//                high = mid - 1;
+//            }
+//        }
+//        return false;
+//    }
 
 //
 //          O(n)
 //    // Write a function that checks if array contains another element
-    boolean isContaining(Object[] arr, Object other){
-        for (int i = 0; i < arr.length; i++){
-            if(arr[i].equals(other)){
-                return true;
-            }
-        }
-        return false;
-    }
-//
+//    boolean isContaining(Object[] arr, Object other){
+//        for(int i = 0; i < arr.length; i++){
+//            if(arr[i].equals(other)){
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
+
+
 //    // Write a function that checks if array is not empty
 //    boolean isNotEmpty(Integer[] arr){
 //        if(arr != null && arr.length != 0){
@@ -738,33 +749,36 @@ public class JavaStepsDefs {
 //        }
 //    }
 //
-//          // O(1) - because speed of execution of this function doesn't change no matter how much data we feed to it
-//    // Write a function that checks if array is empty
-//    boolean isArrEmpty(Integer[] arr){
+    // O(1) - because speed of execution of this function doesn't change no matter how much data we feed to it
+    // Write a function that checks if array is empty
+//    boolean isArrEmpty(int[] arr){
 //        if(arr == null || arr.length == 0){
 //            return true;
 //        } else {
 //            return false;
 //        }
 //    }
-//
-            // O(n)
-//    // Write a function that prints all even numbers from integer array
-//    void printArrEven(Integer[] arr){
+
+    // O(n)
+    // Write a function that prints all even numbers from integer array
+//    void printArrEven(int[] arr){
 //        for(int i = 0; i < arr.length; i++){
 //            if(arr[i] % 2 == 0){
 //                System.out.println(arr[i]);
 //            }
 //        }
 //    }
+
+
 //
 //          O(n)
-//    // Write a function that prints all integer array
-//    void printArr(Integer[] arr){
+    // Write a function that prints all integer array
+//    void printArr(int[] arr){
 //        for(int i = 0; i < arr.length; i++){
 //            System.out.println(arr[i]);
 //        }
 //    }
+
 //
 //    // Write a function that supports also negative numbers
 //    void printNegativeNum (int num) {
@@ -779,8 +793,6 @@ public class JavaStepsDefs {
 //        for(int i = 0; i <= num; i++){
 //            System.out.println(i);
 //        }
-
-
 //    }
 
 

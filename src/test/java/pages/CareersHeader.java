@@ -11,8 +11,6 @@ import static support.TestContext.getWait;
 
 public class CareersHeader extends Page{
 
-
-
     @FindBy(xpath = "//a[@href='/login']/button")
     private WebElement loginButton;
 
